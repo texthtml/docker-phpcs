@@ -1,5 +1,5 @@
-FROM php:7.0
+FROM php:7.0-alpine
 
-RUN apt-get update && apt-get -y install patch
+RUN apk --update add patch && rm -rf /var/cache/apk/*
 
 RUN pear install PHP_CodeSniffer-2.5.1
