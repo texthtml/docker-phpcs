@@ -2,4 +2,4 @@ FROM php:7.0-alpine
 
 RUN apk add --no-cache patch
 
-RUN pear install PHP_CodeSniffer-2.8.0
+RUN pear install PHP_CodeSniffer-2.8.1
