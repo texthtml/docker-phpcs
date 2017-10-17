@@ -1,4 +1,4 @@
-FROM php:7.0-alpine
+FROM php:7.1-alpine
 
 RUN apk add --no-cache patch
 
