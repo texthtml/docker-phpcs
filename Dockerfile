@@ -1,5 +1,5 @@
-FROM php:7.1-alpine
+FROM php:7.2-alpine
 
 RUN apk add --no-cache patch
 
-RUN pear install PHP_CodeSniffer-3.1.1
+RUN pear install PHP_CodeSniffer-3.2.0
