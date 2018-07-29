@@ -1,6 +1,6 @@
 # PHPCS
 
-This a docker image for [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+This is a docker image for [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 
 ## Usage
 
