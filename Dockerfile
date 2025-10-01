@@ -11,8 +11,8 @@ RUN curl -OL https://phar.io/releases/phive.phar && \
 
 ARG VERSION
 
-RUN ./phive.phar install --trust-gpg-keys 689DAD778FF08760E046228BA978220305CD5C32 phpcs@$VERSION
-RUN ./phive.phar install --trust-gpg-keys 689DAD778FF08760E046228BA978220305CD5C32 phpcbf@$VERSION
+RUN ./phive.phar install --trust-gpg-keys D91D86963AF3A29B6520462297B02DD8E5071466 phpcs@$VERSION
+RUN ./phive.phar install --trust-gpg-keys D91D86963AF3A29B6520462297B02DD8E5071466 phpcbf@$VERSION
 
 RUN /tools/phpcs --version
 RUN /tools/phpcbf --version
