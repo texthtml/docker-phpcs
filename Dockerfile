@@ -2,6 +2,8 @@ FROM php:8.6-alpine AS base
 
 FROM base AS builder
 
+RUN apk add --no-cache --virtual .mbdeps $PHPIZE_DEPS oniguruma-dev && docker-php-ext-install mbstring
+
 RUN curl -OL https://phar.io/releases/phive.phar && \
     curl -OL https://phar.io/releases/phive.phar.asc && \
     apk add --no-cache --virtual .gpg gpg gpg-agent && \
@@ -11,8 +13,8 @@ RUN curl -OL https://phar.io/releases/phive.phar && \
 
 ARG VERSION
 
-RUN ./phive.phar install --trust-gpg-keys D91D86963AF3A29B6520462297B02DD8E5071466 phpcs@$VERSION
-RUN ./phive.phar install --trust-gpg-keys D91D86963AF3A29B6520462297B02DD8E5071466 phpcbf@$VERSION
+RUN ./phive.phar install --trust-gpg-keys 5CB4F778BF9BC4FB67AE511D96E91A992CF22FF4 phpcs@$VERSION
+RUN ./phive.phar install --trust-gpg-keys 5CB4F778BF9BC4FB67AE511D96E91A992CF22FF4 phpcbf@$VERSION
 
 RUN /tools/phpcs --version
 RUN /tools/phpcbf --version
